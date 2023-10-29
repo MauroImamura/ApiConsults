@@ -1,0 +1,73 @@
+﻿@page "~/dolarcomercial"
+@model App.DolarComercial.DolarComercialHistoricoModel
+@{
+    ViewData["Title"] = "DolarComercial";
+}
+
+<div class="text-center">
+    <h1 class="display-4">DÓLAR COMERCIAL</h1>
+    <p>Dados do Banco Central do Brasil.</p>
+</div>
+<br/>
+<br/>
+
+@if(Model.DadosReq.TipoResposta == ETipoResposta.valido)
+{
+    <div class="container">
+        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
+            <h3>Cotações:</h3>
+            <br/>
+            <input disabled type="hidden" id="ctt" value="@Model.DadosReq" />
+            <input disabled type="hidden" id="dt" value="@Model.DataRef" />
+            <p>
+                Data de referência: <input disabled id="dataCotacao" value="@Model.DataRef"/>
+            </p>
+            <br />
+            <p>
+                Dólar de Compra: <input disabled class="number" id="compra" value="" />
+            </p>
+            <br />
+            <p>
+                Dólar de Venda: <input disabled class="number" id="venda" value="" />
+            </p>
+        </div>
+        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
+            <p>
+                Valor comprado: <input class="number" id="valorComprado" value="" />
+            </p>
+            <br />
+            <p>
+                Valor de Venda: <input class="number" id="valorVendido" value="" />
+            </p>
+        </div>
+        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
+            <p>
+                Total de compra: <input disabled class="number" id="totalComprado" value="0" />
+            </p>
+            <br />
+            <p>
+                Total de venda: <input disabled class="number" id="totalVendido" value="0" />
+            </p>
+        </div>
+    </div>
+}
+else
+{
+    <div>
+        <h3>Não há dados disponíveis.</h3>
+    </div>
+}
+<br />
+<br />
+
+<div>
+    <h3>Selecione outra data:</h3>
+    <form>
+        <input type="date" id="dataSlc" name="dataSlc" type="date" 
+            required
+        <input type="submit" />
+    </form>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/dolarComercial.js"></script>
