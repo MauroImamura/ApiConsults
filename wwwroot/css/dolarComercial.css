@@ -1,0 +1,20 @@
+.dataInput{
+    margin-left:50px;
+}
+
+.dolarTable {
+    margin:50px;
+  }
+
+  .dolarTable caption{
+    text-align: left !important;
+    margin-bottom: 25px;
+  }
+
+  .dolarTable tr{
+    padding:40px;
+  }
+
+  .dolarTable td{
+    padding:10px;
+  }

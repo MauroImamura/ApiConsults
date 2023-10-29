@@ -2,3 +2,66 @@ html {
     background-color: black;
     color: white;
 }
+
+.subHeading{
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.navBar{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.navBar a{
+    font-size: 12px;
+    font-weight:bold;
+}
+
+.contentContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 20px;
+}
+
+a {
+    color: rgb(106, 192, 231);
+    text-decoration: underline;
+  }
+  
+  /* Style for visited links */
+  a:visited {
+    color: rgb(219, 130, 219);
+    text-decoration: none;
+  }
+
+  .indexTable {
+    margin:50px;
+  }
+
+  .indexTable tr{
+    padding:40px;
+  }
+
+  .indexTable td{
+    padding:10px;
+  }
+
+  .indexTable .description{
+    color:rgb(170, 170, 170);
+    font-style: italic;
+  }
+
+  .subHeadingProject{
+    font-size: 16px;
+    margin-left: 2%;
+    padding: 0;
+    border-left: 8px solid white;
+}
+
+.subHeadingProject p{
+    margin-left: 10px;
+}

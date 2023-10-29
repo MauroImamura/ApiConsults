@@ -1,11 +1,12 @@
 $(document).ready(function(){
     var info = $("#ctt").val();
     var data = $("#dt").val();
+    console.log(data);
+    console.log(info);
     MostrarCotacao(data,info);
 })
 
 function MostrarCotacao(data,info){
-    console.log(info);
     var arr = $.parseJSON(info);
     var v = arr.value;
     if (v.length == 0) {
@@ -15,8 +16,6 @@ function MostrarCotacao(data,info){
     else {
         var cotCompra = v[0].cotacaoCompra;
         var cotVenda = v[0].cotacaoVenda;
-        console.log(cotCompra);
-        console.log(cotVenda);
         if (cotCompra != "") {
             $("#compra").val(cotCompra);
         }

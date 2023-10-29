@@ -3,16 +3,26 @@
     <head>
         <title>@ViewData["Title"] - Api Consults</title>
         <link rel="stylesheet" href="~/css/app.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/dolarComercial.css" asp-append-version="true"/>
     </head>
     <body>
         <header>
             <partial name="Shared/_NavMenu" />
         </header>
-        <main>
-            @RenderBody()
-        </main>
+        <div class="contentContainer">
+            <div class="content">
+                <main>
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
         <footer>
-            ®2023 - Powered by MauroT.
+            <br/>
+            <br/>
+            <hr/>
+            <div class="container" style="text-align: right;">
+                <span>®2023 - Powered by <a href="https://mauroimamura.com.br" target="_blank">Mauro Imamura</a></span>
+            </div>
         </footer>
     </body>
 </html>

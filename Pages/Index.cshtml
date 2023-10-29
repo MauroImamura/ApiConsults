@@ -4,8 +4,18 @@
 }
 
 <h1>Boas vindas.</h1>
-<p>Selecione o serviço que gostaria de consultar:</p>
-<ul>
-    <li><a asp-page="DolarComercial">Dólar Comercial Histórico</a></li>
-    <li>English With News</li>
-</ul>
+<div class="subHeading">
+    <p>Selecione o serviço que gostaria de consultar:</p>
+</div>
+<div class="indexTable">
+    <table>
+    <tr>
+        <td><h3><a asp-page="DolarComercial">Dólar Comercial Histórico</a></h3></td>
+        <td class="description">Consulta ao câmbio do dólar por data. Os valores são obtidos pela API do Banco Central do Brasil.</td>
+    </tr>
+    <tr>
+        <td><h3>English With News</h3></td>
+        <td class="description">Consulta de significado de palavras em manchetes de notícias usando API pública de dicionário de inglês.</td>
+    </tr>
+    </table>
+</div>

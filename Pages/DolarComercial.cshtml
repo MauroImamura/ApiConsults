@@ -5,50 +5,54 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">DÓLAR COMERCIAL</h1>
-    <p>Dados do Banco Central do Brasil.</p>
+    <h2>DÓLAR COMERCIAL</h1>
+    <div class="subHeadingProject">
+        <p>Dados do Banco Central do Brasil.</p>
+        <p>Selecione a data para consulta. Os valores mostrados são as cotações de compra e venda no fechamento da data escolhida.</p>
+        <p>Os dados estão disponíveis apenas para dias úteis.</p>
+    </div>
 </div>
 <br/>
 <br/>
 
 @if(Model.DadosReq.TipoResposta == ETipoResposta.valido)
 {
+    <div class="dataInput">
+        <input disabled hidden id="dataCotacao" value="@Model.DataRef"/>
+        <input disabled type="hidden" id="ctt" value="@Model.DadosReq" />
+        <input disabled type="hidden" id="dt" value="@Model.DataRef" />
+        <h3>Selecione a data:</h3>
+        <form>
+            <input type="date" id="dataSlc" name="dataSlc" type="date" required/>
+            <input type="submit" />
+        </form>
+    </div>
     <div class="container">
-        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
-            <h3>Cotações:</h3>
-            <br/>
-            <input disabled type="hidden" id="ctt" value="@Model.DadosReq" />
-            <input disabled type="hidden" id="dt" value="@Model.DataRef" />
-            <p>
-                Data de referência: <input disabled id="dataCotacao" value="@Model.DataRef"/>
-            </p>
-            <br />
-            <p>
-                Dólar de Compra: <input disabled class="number" id="compra" value="" />
-            </p>
-            <br />
-            <p>
-                Dólar de Venda: <input disabled class="number" id="venda" value="" />
-            </p>
-        </div>
-        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
-            <p>
-                Valor comprado: <input class="number" id="valorComprado" value="" />
-            </p>
-            <br />
-            <p>
-                Valor de Venda: <input class="number" id="valorVendido" value="" />
-            </p>
-        </div>
-        <div style="display:inline-block; padding-right: 50px; white-space: nowrap">
-            <p>
-                Total de compra: <input disabled class="number" id="totalComprado" value="0" />
-            </p>
-            <br />
-            <p>
-                Total de venda: <input disabled class="number" id="totalVendido" value="0" />
-            </p>
-        </div>
+        <table class="dolarTable">
+            <caption><h3>Cotações:</h3></caption>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Cotação do dia</td>
+                    <td>Valor movimentado (USD)</td>
+                    <td>Valor convertido (BRL)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Compra</td>
+                    <td><input disabled class="number" id="compra" value="" /></td>
+                    <td><input class="number" id="valorComprado" value="" /></td>
+                    <td><input disabled class="number" id="totalComprado" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>Venda</td>
+                    <td><input disabled class="number" id="venda" value="" /></td>
+                    <td><input class="number" id="valorVendido" value="" /></td>
+                    <td><input disabled class="number" id="totalVendido" value="0" /></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 }
 else
@@ -60,14 +64,7 @@ else
 <br />
 <br />
 
-<div>
-    <h3>Selecione outra data:</h3>
-    <form>
-        <input type="date" id="dataSlc" name="dataSlc" type="date" 
-            required
-        <input type="submit" />
-    </form>
-</div>
+
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/js/dolarComercial.js"></script>
